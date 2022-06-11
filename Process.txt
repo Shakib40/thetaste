@@ -1,3 +1,4 @@
 npm i mongodb
 
+run command
 npm run dev

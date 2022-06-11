@@ -1,7 +1,7 @@
 import React from 'react'
 
 export const DeliveredItem = (props) => {
-  console.log("Props" , props);
+  // console.log("Props" , props);
   return (
     <div style = {DeliveredItemStyle}>
     {props.cartItems.map( (item, i) =>(
