@@ -2,3 +2,14 @@ npm i mongodb
 
 run command
 npm run dev
+
+rgb(20, 184, 166)
+
+green
+rgb(16, 185, 129)
+
+red
+rgb(239, 68, 68)
+
+blue
+rgb(99, 102, 241)

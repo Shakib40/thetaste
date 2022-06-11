@@ -1,9 +1,9 @@
 import React from 'react'
 
 export const Right = (props) => {
-  const {ListSelector }  = props;
+  const {ListSelector , Data }  = props;
   
-  console.log("Right");
+  console.log("Right" , Data);
 
   return( 
       <div style = { RightStyle }>

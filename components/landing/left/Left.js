@@ -16,21 +16,7 @@ export const Left = (props) => {
 
 
   return (
-    <div style = { LeftStyle }>
-        { Data.map( (item , i) => (
-          <div key={i} style = { LeftList } onClick={ () => ListSelector(item.id) }>
-            { item.name }
-              { item.orderby &&  selected == item.id && 
-                (
-                  item.orderby.map( ( list, i) => (
-                    <div key = {i} style = {ListAccordion} > {list.name} </div> 
-                  ))
-                )
-              }  
-          </div>
-          
-        ))}  
-    </div>
+    <></>
   )
 }
 
