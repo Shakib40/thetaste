@@ -1,6 +1,10 @@
 import React from 'react'
 
-export const Right = () => {
+export const Right = (props) => {
+  const {ListSelector }  = props;
+  
+  console.log("Right");
+
   return( 
       <div style = { RightStyle }>
         <h1>Right</h1>

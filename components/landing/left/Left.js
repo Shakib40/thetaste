@@ -1,82 +1,24 @@
 import React from 'react'
 
-export const Left = () => {
+export const Left = (props) => {
+  const {Data}  = props
 
   const  [selected , setSelected] = React.useState(null)
+  // const Accordion = (id) => {
+  //   console.log("ID" , id);
+  //   setSelected(id)
+  // }
 
-  const Accordion = (id) => {
+  const ListSelector = (id) => {
     console.log("ID" , id);
     setSelected(id)
   }
 
-  let Data = [
-    { 
-      id: '1',
-      name: 'Search',
-      description: 'Search',
-    },
-
-    {
-      id: '2',
-      name: 'Filter',
-      description: 'Filter',
-    },
-
-    {
-      id: '3',
-      name: 'Bar Chart',
-      description: 'Bar Chart',
-      orderby: [
-         {
-          id: '31',
-          name: 'Weeks',
-          description: 'weeks',
-         },
-
-         {
-          id: '32',
-          name: 'Months',
-          description: 'Months',
-         },
-
-         {
-          id: '31',
-          name: 'Years',
-          description: 'Years',
-         },
-      ]
-    },
-
-    {
-      id: '4',
-      name: 'Line Chart',
-      description: 'Line Chart',
-      orderby: [
-        {
-         id: '31',
-         name: 'Weeks',
-         description: 'weeks',
-        },
-
-        {
-         id: '32',
-         name: 'Months',
-         description: 'Months',
-        },
-
-        {
-         id: '31',
-         name: 'Years',
-         description: 'Years',
-        },
-     ]
-    },
-  ]
 
   return (
     <div style = { LeftStyle }>
         { Data.map( (item , i) => (
-          <div key={i} style = { LeftList } onClick={ () => Accordion(item.id) }>
+          <div key={i} style = { LeftList } onClick={ () => ListSelector(item.id) }>
             { item.name }
               { item.orderby &&  selected == item.id && 
                 (

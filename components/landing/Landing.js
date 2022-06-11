@@ -6,6 +6,75 @@ import {Right} from './right/Right'
 
 export const Landing = (props) => {
   // console.log("Landing" , props);
+
+  let Data = [
+    { 
+      id: '1',
+      name: 'Search',
+      description: 'Search',
+    },
+
+    {
+      id: '2',
+      name: 'Filter',
+      description: 'Filter',
+    },
+
+    {
+      id: '3',
+      name: 'Bar Chart',
+      description: 'Bar Chart',
+      orderby: [
+         {
+          id: '31',
+          name: 'Weeks',
+          description: 'weeks',
+         },
+
+         {
+          id: '32',
+          name: 'Months',
+          description: 'Months',
+         },
+
+         {
+          id: '31',
+          name: 'Years',
+          description: 'Years',
+         },
+      ]
+    },
+
+    {
+      id: '4',
+      name: 'Line Chart',
+      description: 'Line Chart',
+      orderby: [
+        {
+         id: '31',
+         name: 'Weeks',
+         description: 'weeks',
+        },
+
+        {
+         id: '32',
+         name: 'Months',
+         description: 'Months',
+        },
+
+        {
+         id: '31',
+         name: 'Years',
+         description: 'Years',
+        },
+     ]
+    },
+  ]
+
+  const ListSelector = () => {
+     
+  }
+
   return (
     <Fragment>
       <Head>
@@ -15,9 +84,9 @@ export const Landing = (props) => {
 
       <div style={LandingStyle}>
         
-        <Left/>
-        <Right/>
-        
+        <Left ListSelector = {ListSelector}  Data ={Data} />
+        <Right ListSelector = {ListSelector}  Data = {Data} />
+
       </div>
     </Fragment>
   )
