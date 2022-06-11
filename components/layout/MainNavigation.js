@@ -1,13 +1,13 @@
 import classes from './MainNavigation.module.css';
-import Link from 'next/link'
+import NextLink from 'next/link'
 
 function MainNavigation() {
 
   return (
     <header className={classes.header}>
-      {/* <NextLink href='/' className={classes.logo}>The Taste</NextLink> */}
+      <NextLink href='/' className={classes.logo}>The Taste</NextLink>
       <nav>
-        {/* <ul>
+        <ul>
           <li>
             <NextLink href='/today-order'>Today Order</NextLink> {" "}
           </li>
@@ -19,8 +19,8 @@ function MainNavigation() {
             <NextLink href='/delivered'>Delivered</NextLink> {" "}
           </li>
 
-        </ul> */}
-         <ul>
+        </ul>
+         {/* <ul>
             <li>
               <Link href="/">
                 <a>thetaste</a>
@@ -42,7 +42,7 @@ function MainNavigation() {
               </Link>
             </li>
 
-          </ul>
+          </ul> */}
       </nav>
     </header>
   );
