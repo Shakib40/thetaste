@@ -9,7 +9,6 @@ const Main = (props) => {
     const Noodles = () => {
       return (
         <> 
-        <h1>Today Order </h1>
         <section className="Wrapper">
          { products.map(product =>(
             <section key = {product.id}>
