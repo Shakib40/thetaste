@@ -1,7 +1,7 @@
 import '../styles/globals.css'
 import Layout from '../components/layout/Layout' 
-import { Provider } from "react-redux";
-import { wrapper } from "../redux/store";
+// import { Provider } from "react-redux";
+// import { wrapper } from "../redux/store";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -12,4 +12,4 @@ function MyApp({ Component, pageProps }) {
   )
 }
 
-export default wrapper.withRedux(MyApp);
+export default MyApp;
