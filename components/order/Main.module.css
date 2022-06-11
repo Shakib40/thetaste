@@ -1,0 +1,6 @@
+.Wrapper{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+    grid-auto-flow: row dense;
+}

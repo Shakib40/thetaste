@@ -1,0 +1,141 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  letter-spacing: 1px;
+  word-spacing: 1px;
+  }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+
+h1, h2, h3{
+  margin: 0.5rem 0;
+}
+
+h1{
+  font-size: 1.5rem;
+}
+
+h2{
+  font-size: 1.2rem;
+}
+
+h2{
+  font-size: 1rem;
+}
+
+section{
+  width: 98%;
+  padding: 0.5rem;
+  margin: 0 auto;
+}
+
+.container{
+  width: 99%;
+  margin: 0 auto;
+  margin: 5px;
+  padding: 1rem;
+  border: 1px solid #ccc;
+}
+
+
+.row{
+  display: flex;
+  justify-content: space-between;
+}
+
+.column {
+  width: 49%;
+  padding: 10px;
+  height: 300px;
+  border: 1px solid red
+}
+.grid {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 10px;
+  grid-auto-flow: row dense;
+}
+
+.col-1{
+  flex:1
+}
+
+.col-2{
+  flex:2
+}
+
+
+.row.center{
+  align-items: center;
+}
+
+.productwrap1{
+ width: 39%;
+ text-align: left;
+}
+
+.productwrap2{
+  width: 39%;
+}
+
+.productwrap3 {
+  width: 20%;
+}
+
+.product{
+  display: flex;
+  justify-content: space-between;
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 0.5em;
+}
+
+button.addBtn{
+  background-color: #40c0f0;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  letter-spacing: 1px;
+  color: white;
+  cursor: pointer;
+}
+
+
+button.add{
+  /* background-color: #40c0f0; */
+  /* width: 1.5rem; */
+  padding: 5px 10px;
+  margin-right: 5px;
+}
+
+button.remove{
+  /* background-color: red; */
+  /* width: 1.5rem; */
+  padding: 5px 10px;
+}
+
+button.badge{
+  /* background-color: blue; */
+  /* width: 1.5rem; */
+  padding: 5px 10px;
+  /* border:none; */
+  /* color: white; */
+}
+
+.text-right{
+  text-align: right;
+}
+
+.cartItem{
+  margin : 15px 0px;
+}
