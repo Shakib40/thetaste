@@ -14,7 +14,38 @@ const  UpdateOrder = (props) => {
     const {products}  = data;
     const [cartItems , setCartItems] = useState([]);
     useEffect( () => { setCartItems(cartItem) } ,[id]) 
+     
+    const notifyAdded = (msg) => {
+        toast.success(`Added : ${msg} `, {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            style:{
+                backgroundColor:'black',
+                color: 'white'
+            }
+        });
+    } 
 
+    const notifyRemove = (msg) => {
+        toast.error(`Removed : ${msg} `, {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            style:{
+                backgroundColor:'black',
+                color: 'white'
+            }
+        });
+    } 
 
     const notify = (success) => {
         switch(success) {
@@ -81,9 +112,8 @@ const  UpdateOrder = (props) => {
 
     const onAdd = (payload) => {
         const {id ,  name , price , type , category} = payload;
-
         const exist = cartItems.find(item => item.id === id)
-
+        notifyAdded(name + ' ' + type.toUpperCase() + ' Rs.' + price );
         if(exist) {
             setCartItems(cartItems.map(x => 
              x.id === payload.id ? { 
@@ -104,7 +134,7 @@ const  UpdateOrder = (props) => {
     const onRemove = (payload) => {
       const {id ,  name , price , type , category} = payload;
       const exist = cartItems.find(item => item.id === id)
-
+      notifyRemove(name + ' ' + type.toUpperCase() + ' Rs.' + price );
        if(exist.quantity ===1){
            setCartItems(cartItems.filter( (x) => x.id !== id));
        }else{
@@ -137,13 +167,13 @@ const  UpdateOrder = (props) => {
 
     async function DeleteOrder(){
         let text = "Press a button!\nEither OK or Cancel.";    
+        notify('warn')
         if (confirm(text) == true) {
         const response = await fetch('/api/delete', {
             method: 'DELETE',
             body: id,
         })  
         const data = await response.json();
-        notify('warn')
         router.push('/new-order')
         } 
     }

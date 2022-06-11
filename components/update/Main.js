@@ -74,7 +74,7 @@ const cardWapper = {
   borderBottom: "0",
   borderRadius: "5px",
   letterSpacing: "2px",
-  border: "1px solid red"
+  border: "1px solid black"
 }
 
 const title = {

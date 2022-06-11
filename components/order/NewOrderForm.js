@@ -109,9 +109,7 @@ const  NewOrderForm = (props) => {
     const onRemove = (payload) => {
       const {id ,  name , price , type , category} = payload;
       const exist = cartItems.find(item => item.id === id)
-
       notifyRemove(name + ' ' + type.toUpperCase() + ' Rs.' + price );
-      
       if(exist.quantity ===1){
            setCartItems(cartItems.filter( (x) => x.id !== id));
        }else{
