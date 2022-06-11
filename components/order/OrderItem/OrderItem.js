@@ -145,6 +145,11 @@ function OrderItem(props) {
         </table>
         </div>
 
+        <div style = {OrderPrice}>
+            <div> <strong style = {{ marginRight: '10px'}} >Total Price:-</strong> </div>
+            <div> <strong>Rs.{props.totalPrice} </strong> </div>
+        </div>
+
         <div style = {{ margin: '5px 0px', }}>
           <button className="succes" onClick={ () => completeOrderHandler(props.id)} style ={ButtonStyled}>Complete Order</button>
           <button onClick={() => updateOrderHandler(props.id)} style ={ButtonStyled} >Update Order</button>
@@ -193,6 +198,16 @@ const Table = {
   padding: '10px 10px',
   marginBottom: '10px',
   borderRadius: '5px',
+}
+
+const OrderPrice = {
+  display: 'flex',
+  fontSize: '20px',
+  border: ' 1px solid black',
+  padding: '10px 10px',
+  marginBottom: '5px',
+  borderRadius: '5px',
+  justifyContent: 'flex-end',
 }
 
 const ButtonStyled = {
