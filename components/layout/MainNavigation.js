@@ -1,26 +1,23 @@
 import classes from './MainNavigation.module.css';
-import Link from 'next/link'
+import NextLink from 'next/link'
 
 function MainNavigation() {
 
   return (
     <header className={classes.header}>
-      {/* <Link href='/' className={classes.logo}>The Taste</Link> */}
-      <Link href="/">
-          <a>The Taste</a>
-      </Link>
+      <NextLink href='/' className={classes.logo}>The Taste</NextLink>
       <nav>
         <ul>
-          {/* <li>
-            <Link href='/today-order'>Today Order</Link>
+          <li>
+            <NextLink href='/today-order'>Today Order</NextLink> {" "}
           </li>
           <li>
-            <Link href='/new-order'>New Order</Link>
+            <NextLink href='/new-order'>New Order</NextLink> {" "}
           </li>
 
           <li>
-            <Link href='/delivered'>Delivered</Link>
-          </li> */}
+            <NextLink href='/delivered'>Delivered</NextLink> {" "}
+          </li>
 
         </ul>
       </nav>
