@@ -5,10 +5,13 @@ function MainNavigation() {
 
   return (
     <header className={classes.header}>
-      <Link href='/' className={classes.logo}>The Taste</Link>
+      {/* <Link href='/' className={classes.logo}>The Taste</Link> */}
+      <Link href="/">
+          <a>The Taste</a>
+      </Link>
       <nav>
         <ul>
-          <li>
+          {/* <li>
             <Link href='/today-order'>Today Order</Link>
           </li>
           <li>
@@ -17,7 +20,7 @@ function MainNavigation() {
 
           <li>
             <Link href='/delivered'>Delivered</Link>
-          </li>
+          </li> */}
 
         </ul>
       </nav>
