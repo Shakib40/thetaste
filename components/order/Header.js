@@ -1,9 +1,8 @@
 const Header = (props) => {
-    
     const {countCartItems}  = props;
 
     return(
-        <section className = 'row container center'>
+        <div className = 'row container center' style = {HeaderStye}>
          <div>
             <h1>Menu</h1>
          </div>
@@ -17,9 +16,13 @@ const Header = (props) => {
                 } 
             </h2> {' '}
          </div>
-
-        </section>
+        </div>
     )
 }
 export default Header
+
+const HeaderStye = {
+    boxShadow: 'rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px', // 32
+    marginBottom : '10px',
+}
 

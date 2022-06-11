@@ -27,7 +27,6 @@ const  OrderList = (props) => {
 export default OrderList;
 
 const OrderListStyle = {
-  // border: '1px solid black',
   marginTop: '10px',
 }
 

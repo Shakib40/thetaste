@@ -38,7 +38,7 @@ const ProductStyle = {
   justifyContent: 'space-between',
   marginBottom: '10px',
   fontSize: '16px',
-  border: '1px solid green',
+  border: '1px solid black',
   alignItems: 'center',
   padding: '10px',
   borderRadius: '5px',

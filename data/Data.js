@@ -41,6 +41,8 @@ const data = {
             name: "EGG NOODLES",
             halfPrice: 70,
             fullPrice: 130,
+            halfid: '51',
+            fullid: '52',
             category: "noodles"
         },
 
@@ -49,6 +51,8 @@ const data = {
             name: "EGG SCHEZWAN NOODLES",
             halfPrice: 80,
             fullPrice: 150,
+            halfid: '61',
+            fullid: '62',
             category: "noodles"
         },
         {
@@ -56,6 +60,8 @@ const data = {
             name: "CHICKEN NOODLES",
             halfPrice: 80,
             fullPrice: 150,
+            halfid: '71',
+            fullid: '72',
             category: "noodles"
         },
         {
@@ -63,6 +69,8 @@ const data = {
             name: "CHICKEN SCHEZWAN NOODLES",
             halfPrice: 90,
             fullPrice: 170,
+            halfid: '81',
+            fullid: '82',
             category: "noodles"
         },
         {
@@ -70,6 +78,8 @@ const data = {
             name: "VEG FRIED RICE",
             halfPrice: 60,
             fullPrice: 110,
+            halfid: '91',
+            fullid: '92',
             category: "rice"
         },
     ]

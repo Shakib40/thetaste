@@ -13,10 +13,42 @@ const  NewOrderForm = (props) => {
     const {products}  = data;
     const [cartItems , setCartItems] = useState([]);
 
+    const notifyAdded = (msg) => {
+        toast.success(`Added : ${msg} `, {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            style:{
+                backgroundColor:'black',
+                color: 'white'
+            }
+        });
+    } 
+
+    const notifyRemove = (msg) => {
+        toast.error(`Removed : ${msg} `, {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            style:{
+                backgroundColor:'black',
+                color: 'white'
+            }
+        });
+    } 
+
     const notify = (success) => {
         switch(success) {
             case 'success':
-                toast.success('🦄 Wow so easy!', {
+                toast.success('🦄 Processing Your Order!', {
                     position: "top-right",
                     autoClose: 5000,
                     hideProgressBar: false,
@@ -26,6 +58,7 @@ const  NewOrderForm = (props) => {
                     progress: undefined,
                     style:{
                         backgroundColor:'black',
+                        color: 'white'
                     }
                 });
               break;
@@ -40,18 +73,20 @@ const  NewOrderForm = (props) => {
                     progress: undefined,
                     style:{
                         backgroundColor:'black',
+                        color: 'white'
                     }
                 });
               break;
             default:
               
-          }
+        }
     }
 
     const onAdd = (payload) => {
         const {id ,  name , price , type , category} = payload;
-
         const exist = cartItems.find(item => item.id === id)
+        
+        notifyAdded(name + ' ' + type.toUpperCase() + ' Rs.' + price );
 
         if(exist) {
             setCartItems(cartItems.map(x => 
@@ -67,6 +102,7 @@ const  NewOrderForm = (props) => {
                     ...payload, quantity:1
                 }
             ])
+
         }
     }
 
@@ -74,7 +110,9 @@ const  NewOrderForm = (props) => {
       const {id ,  name , price , type , category} = payload;
       const exist = cartItems.find(item => item.id === id)
 
-       if(exist.quantity ===1){
+      notifyRemove(name + ' ' + type.toUpperCase() + ' Rs.' + price );
+      
+      if(exist.quantity ===1){
            setCartItems(cartItems.filter( (x) => x.id !== id));
        }else{
         setCartItems(cartItems.map(x => 

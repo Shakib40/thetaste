@@ -6,7 +6,6 @@ const index = (props) => {
   return (
     <>
     <OrderList orders={props.orders} />
-    {/* <h1>TOday</h1> */}
     </>
   )
 }

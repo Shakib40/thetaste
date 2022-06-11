@@ -35,7 +35,6 @@ const Main = (props) => {
         title: "Noodles", 
         description : <Noodles/>
       },
-  
       { 
         title: "Rice", 
         description : "Rice"
@@ -51,7 +50,7 @@ const Main = (props) => {
     ]
 
     return(
-        <section className = 'container col-2 '>         
+        <section className = 'container col-2 ' style = {MainStyle}>         
          
                {data.map( (item, i) => (
                   
@@ -71,12 +70,16 @@ const Main = (props) => {
 }
 export default Main
 
+const MainStyle = {
+  boxShadow: 'rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px' // 32
+}
+
 const cardWapper = {
   marginBottom: "15px",
   borderBottom: "0",
   borderRadius: "5px",
   letterSpacing: "2px",
-  border: "1px solid red"
+  border: "1px solid black"
 }
 
 const title = {
