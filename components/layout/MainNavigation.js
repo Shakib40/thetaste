@@ -8,7 +8,7 @@ function MainNavigation() {
       <NextLink href='/' className={classes.logo}>The Taste</NextLink>
       <nav>
         <ul>
-          {/* <li>
+          <li>
             <NextLink href='/today-order'>Today Order</NextLink> {" "}
           </li>
           <li>
@@ -17,7 +17,7 @@ function MainNavigation() {
 
           <li>
             <NextLink href='/delivered'>Delivered</NextLink> {" "}
-          </li> */}
+          </li>
 
         </ul>
       </nav>
