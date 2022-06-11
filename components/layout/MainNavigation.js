@@ -36,6 +36,12 @@ function MainNavigation() {
                 <a>New Order</a>
               </Link>
             </li>
+            <li>
+              <Link href="/delivered">
+                <a>Delivered</a>
+              </Link>
+            </li>
+
           </ul>
       </nav>
     </header>
