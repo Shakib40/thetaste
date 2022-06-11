@@ -5,7 +5,7 @@ function MainNavigation() {
 
   return (
     <header className={classes.header}>
-      <NextLink href='/' className={classes.logo}>The Taste</NextLink>
+      <NextLink href='/' className={classes.logo}>THE TASTE</NextLink>
       <nav>
         <ul>
           <li>

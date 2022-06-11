@@ -112,24 +112,16 @@ button.addBtn{
 
 
 button.add{
-  /* background-color: #40c0f0; */
-  /* width: 1.5rem; */
   padding: 5px 10px;
   margin-right: 5px;
 }
 
 button.remove{
-  /* background-color: red; */
-  /* width: 1.5rem; */
   padding: 5px 10px;
 }
 
 button.badge{
-  /* background-color: blue; */
-  /* width: 1.5rem; */
   padding: 5px 10px;
-  /* border:none; */
-  /* color: white; */
 }
 
 .text-right{
@@ -138,4 +130,20 @@ button.badge{
 
 .cartItem{
   margin : 15px 0px;
+}
+
+.blue{
+  background-color: rgb(99, 102, 241) !important;
+}
+
+.succes{
+  background-color: rgb(16, 185, 129) !important;
+}
+
+.alert{
+  background-color: rgb(239, 68, 68) !important;
+}
+
+.skygreen{
+  background-color: rgb(20, 184, 166) !important;
 }

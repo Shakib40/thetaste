@@ -146,9 +146,9 @@ function OrderItem(props) {
         </div>
 
         <div style = {{ margin: '5px 0px', }}>
-          <button onClick={ () => completeOrderHandler(props.id)} style ={ButtonStyled}>Complete Order</button>
+          <button className="succes" onClick={ () => completeOrderHandler(props.id)} style ={ButtonStyled}>Complete Order</button>
           <button onClick={() => updateOrderHandler(props.id)} style ={ButtonStyled} >Update Order</button>
-          <button onClick={ () => canelOrderHandler(props.id)} style ={ButtonStyled} >Cancel Order</button>
+          <button className="alert" onClick={ () => canelOrderHandler(props.id)} style ={ButtonStyled} >Cancel Order</button>
         </div>
         <ToastContainer
             position="top-right"
@@ -198,7 +198,8 @@ const Table = {
 const ButtonStyled = {
     padding: '12px 50px',
     marginRight: '15px',
-    letterSpacing: '1px',
+    letterSpacing: '2px',
+    fontSize: '16px',
     border: 'none',
     backgroundColor: '#41addd',
     color: 'white',
