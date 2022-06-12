@@ -1,6 +1,7 @@
 import React from 'react'
 import  Head from 'next/head'
 import {Fragment} from 'react'
+import {Home} from './Home/DeliveredList'
 
 export const Landing = (props) => {
   // console.log("Landing" , props);
@@ -16,7 +17,7 @@ export const Landing = (props) => {
     { 
       id: '11',
       name: 'Home',
-      description: 'Home',
+      description: <Home delivered = {props.delivered} />
     },
     { 
       id: '1',
@@ -108,13 +109,6 @@ export const Landing = (props) => {
         { Data.map( (item , i) => (
           <div key={i} style = { LeftList } onClick={ () => ListSelector(item) }>
             { item.name }
-              {/* { item.orderby &&  selected == item.id && 
-                (
-                  item.orderby.map( ( list, i) => (
-                    <div key = {i} style = {ListAccordion} onClick={ () => ListSelector(list) } > {list.name} </div> 
-                  ))
-                )
-              }   */}
           </div>
           
           ))}  
