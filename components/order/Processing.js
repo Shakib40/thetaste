@@ -144,19 +144,20 @@ const [ Remarks , setRemarks ] = useState('')
         </div>
 
         <div style = {OrderMode} > 
-            <div style = { { marginBottom: '15px', } }>
-            <span> Payment Mode: </span>
-            <select onChange={(e) => setOptionMode(e.target.value)} defaultValue={'Select Payment Option Mode'}> 
-                <option disabled >Select Payment Option Mode</option>                   
-                <option value = 'cash' >Cash</option>
-                <option value = 'online' >Online</option>
-                <option value = 'due' >Due</option>
+
+            <div style = { { marginBottom: '15px', display: 'flex', } }>
+            <span style = {{marginRight: '10px', width: '20%',} } > Payment Mode: </span>
+            <select style = {InputSelect} onChange={(e) => setOptionMode(e.target.value)} defaultValue={'Select Payment Option Mode'}> 
+                <option  disabled >Select Payment Option Mode</option>                   
+                <option  value = 'cash' >Cash</option>
+                <option  value = 'online' >Online</option>
+                <option  value = 'due' >Due</option>
             </select>
             </div>
 
-            <div style={{ display: 'flex',} }>
-              <span style = {{marginRight: '10px',} }> Remarks: </span>
-              <textarea type="text" name="remarks" placeholder="Remarks" 
+            <div style={{ display: 'flex', } }>
+              <span style = {{marginRight: '10px', width: '20%',} }> Remarks: </span>
+              <textarea style = {InputRemark} type="text" name="remarks" placeholder="Remarks" 
                 value={Remarks}
                 onChange={(e) => setRemarks(e.target.value)}
                />
@@ -220,6 +221,7 @@ const ProcessingStyle = {
   const OrderMode = {
     display: 'flex',
     // justifyContent: 'flex-end',
+    width: '100%',
     flexDirection: 'column',
     fontSize: '20px',
     border: ' 1px solid black',
@@ -228,12 +230,34 @@ const ProcessingStyle = {
     borderRadius: '5px',
   }
 
+  const InputSelect = {
+    padding: '10px',
+    letterSpacing:  "2px",
+    boxSizing: 'border-box',
+    border: '2px solid #ccc',
+    borderRadius: '4px',
+    backgroundColor: '#f8f8f8',
+    fontSize: '16px',
+  }
+
+  const InputRemark = {
+    // width: '100%',
+    height: '80px',
+    padding: '12px 20px',
+    boxSizing: 'border-box',
+    border: '2px solid #ccc',
+    borderRadius: '4px',
+    backgroundColor: '#f8f8f8',
+    fontSize: '16px',
+    // resize: 'none',
+  }
+
   const OrderPrice = {
     display: 'flex',
     fontSize: '20px',
     border: ' 1px solid black',
     padding: '10px 10px',
-    marginBottom: '5px',
+    margin: '10px 0px',
     borderRadius: '5px',
     justifyContent: 'flex-end',
   }

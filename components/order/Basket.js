@@ -68,25 +68,32 @@ const Basket = (props) => {
           
           <div style={OrderInfo} >
 
-            <div style ={ { marginBottom: '10px' } }>
-              <span style = {{marginRight: '10px',}}>Name:</span>
-              <input type="text" name="name" placeholder="Enter Name" 
+            <div style ={ { marginBottom: '15px',
+              display: 'flex',
+              justifyContent: 'space-between', 
+              } }>
+              <strong style = {{marginRight: '10px', width: '20%' }}>Name:</strong>
+              <input style = {InputText} type="text" name="name" placeholder="Enter Name" 
                 value={Name}
                 onChange={(e) => setName(e.target.value)}
                />
             </div>
 
-            <div style = {{marginBottom: '15px',}}>
-              <span style = {{marginRight: '10px',}}>Phone:</span>
-              <input type="number" name="phone" placeholder="Enter Phone Number" 
+            <div style = {{
+              marginBottom: '15px',
+              display: 'flex',
+              justifyContent: 'space-between',
+              }}>
+              <strong style = {{marginRight: '10px', width: '20%'}}>Phone:</strong>
+              <input style = {InputText} type="number" name="phone" placeholder="Enter Phone Number" 
                 value={Phone}
                 onChange={(e) => setPhone(e.target.value)}
                />
             </div>
 
             <div style = {{marginBottom: '10px', display: 'flex',}}>
-            <span style = {{marginRight: '10px',}}> Remarks: </span>
-              <textarea type="text" name="remarks" placeholder="Remarks" 
+            <strong style = {{marginRight: '10px',}}> Remarks: </strong>
+              <textarea style = {InputRemark} type="text" name="remarks" placeholder="Remarks" 
                 value={Remarks}
                 onChange={(e) => setRemarks(e.target.value)}
                />
@@ -146,6 +153,30 @@ const OrderInfo = {
   padding: '10px',
   borderRadius: '5px',
   marginBottom: '10px',
+}
+
+const InputText = {
+  width: '100%',
+  height: '35px',
+  paddingLeft: '10px',
+  letterSpacing: '2px',
+  boxSizing: 'border-box',
+  border: '2px solid #ccc',
+  borderRadius: '4px',
+  backgroundColor: '#f8f8f8',
+  fontSize: '14px',
+}
+
+const InputRemark = {
+  width: '100%',
+  height: '80px',
+  padding: '12px 20px',
+  boxSizing: 'border-box',
+  border: '2px solid #ccc',
+  borderRadius: '4px',
+  backgroundColor: '#f8f8f8',
+  fontSize: '16px',
+  // resize: 'none',
 }
 
 const OrderButton = {

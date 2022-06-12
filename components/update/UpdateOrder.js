@@ -146,25 +146,6 @@ const  UpdateOrder = (props) => {
        }
     }
 
-    async function UpdateNow ( totalPrice) {
-
-        const response = await fetch('/api/orders/id', {
-            method: 'PATCH',
-            body: JSON.stringify({
-                id: id,      
-                cartItems: cartItems,
-                totalPrice: totalPrice,
-                updatedAt: new Date(),
-            }),
-            headers: {
-              "Content-Type": "application/json"
-            }
-          })  
-          const data = await response.json();
-          notify('success')
-          router.push('/today-order')
-    }
-
     async function DeleteOrder(){
         let text = "Press a button!\nEither OK or Cancel.";    
         notify('warn')
@@ -177,6 +158,37 @@ const  UpdateOrder = (props) => {
         router.push('/new-order')
         } 
     }
+   
+    async function UpdateNow ( totalPrice) {
+
+        if( cartItems.length === 0 ){
+            DeleteOrder()
+        }else{
+            const response = await fetch('/api/orders/id', {
+                method: 'PATCH',
+                body: JSON.stringify({
+                    id: id,      
+                    cartItems: cartItems,
+                    totalPrice: totalPrice,
+                    updatedAt: new Date(),
+                }),
+                headers: {
+                  "Content-Type": "application/json"
+                }
+              })  
+              const data = await response.json();
+              notify('success')
+              router.push('/today-order')
+        }
+
+        
+    }
+
+
+    
+//     if( cartItems.length === 0 ){
+//         DeleteOrder()
+//    }
 
     return (
         <section>
