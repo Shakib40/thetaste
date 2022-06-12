@@ -24,8 +24,14 @@ const Product = (props) => {
     <>
     <div style = {ProductStyle}>     
         <div className="productwrap1">{product.name}</div>
-        <div className="productwrap2"><button className="addBtn"onClick={ () => onAdd(halfPayload)}>Rs.{product.halfPrice}</button></div>
-        <div className="productwrap2"><button className="addBtn"onClick={ () => onAdd(fullPayload)}>Rs.{product.fullPrice}</button></div>
+        
+        { product. halfPrice &&
+          <div className="productwrap2"><button className="addBtn"onClick={ () => onAdd(halfPayload)}>Rs.{product.halfPrice}</button></div>
+        }
+        
+        { product.fullPrice &&
+            <div className="productwrap2"><button className="addBtn"onClick={ () => onAdd(fullPayload)}>Rs.{product.fullPrice}</button></div>
+        }
     </div>
      </>
   )

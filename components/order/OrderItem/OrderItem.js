@@ -117,7 +117,11 @@ function OrderItem(props) {
                     ) : ( <strong> +91XXXXXXXXXX </strong> ) }
               </div>
             </div>
-            <div> <strong> 19:30 </strong> </div>
+
+            <div> 
+                <strong> { new Date(props.updatedAt).toLocaleDateString()} </strong> 
+                <strong> { new Date(props.updatedAt).toLocaleTimeString()} </strong>
+            </div>
         </div>
         
         <div> 
