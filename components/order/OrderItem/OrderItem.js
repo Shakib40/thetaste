@@ -1,4 +1,5 @@
 // Today Order List
+import React from 'react'
 import {useRouter} from 'next/router'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -6,6 +7,12 @@ import 'react-toastify/dist/ReactToastify.css';
 function OrderItem(props) {
 
   const router = useRouter();
+
+  const [ timestamp, setTimeStamp ] = React.useState(null)
+  React.useEffect( () => { 
+    const time = new Date(props.updatedAt).toLocaleTimeString() 
+    setTimeStamp(time)
+  } , [props.updatedAt])
 
   const notify = (success) => {
     switch(success) {
@@ -119,8 +126,8 @@ function OrderItem(props) {
             </div>
 
             <div> 
-                <strong> { new Date(props.updatedAt).toLocaleDateString()} </strong> 
-                <strong> { new Date(props.updatedAt).toLocaleTimeString()} </strong>
+                {/* <strong> { new Date(props.updatedAt).toLocaleDateString()} </strong>  */}
+                <strong> { timestamp } </strong>
             </div>
         </div>
         
