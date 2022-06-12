@@ -74,7 +74,7 @@ function OrderItem(props) {
       notify('success')
       router.push('/processing/' + ids )
   }
-   
+  
   const updateOrderHandler = (link) =>{
     
     let text = "Press a button!\nEither OK or Cancel.";
@@ -104,10 +104,20 @@ function OrderItem(props) {
 
         <div style={TodayOrderInfo}>
             <div style = {{display: 'flex',}} >
-               <div style = {{ marginRight: '20px' }} >Shakib Jilani</div>
-               <div>9504361535</div>
+
+               <div style = {{ marginRight: '20px' }} >
+                   { props.name ? (
+                    <strong> { props.name } </strong>
+                   ) : ( <strong> Name Not Provided </strong> ) }
+                </div>
+
+               <div>
+                {props.phone ? (
+                      <strong> { props.phone } </strong>
+                    ) : ( <strong> +91XXXXXXXXXX </strong> ) }
+              </div>
             </div>
-            <div>19:30</div>
+            <div> <strong> 19:30 </strong> </div>
         </div>
         
         <div> 
@@ -124,6 +134,9 @@ function OrderItem(props) {
             </tbody>
         </table>
         </div>
+
+        { props.remarks && <div style={OrderRemark} > <strong style = {{ marginRight: '10px'}}>Remarks:</strong>{props.remarks}</div>}
+        
 
         <div style = {OrderPrice}>
             <div> <strong style = {{ marginRight: '10px'}} >Total Price:-</strong> </div>
@@ -180,6 +193,15 @@ const Table = {
   borderRadius: '5px',
 }
 
+const OrderRemark =  {
+  display: 'flex',
+  fontSize: '20px',
+  border: ' 1px solid black',
+  padding: '10px 10px',
+  marginBottom: '5px',
+  borderRadius: '5px',
+}
+
 const OrderPrice = {
   display: 'flex',
   fontSize: '20px',
@@ -192,7 +214,7 @@ const OrderPrice = {
 
 const ButtonStyled = {
     padding: '12px 50px',
-    marginRight: '15px',
+    margin: '15px',
     letterSpacing: '2px',
     fontSize: '16px',
     border: 'none',

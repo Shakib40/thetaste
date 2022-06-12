@@ -26,6 +26,9 @@ export async function getStaticProps() {
        orders: Data.map( data =>({
           cartItems: data.cartItems,
           totalPrice: data.totalPrice,
+          name: data.name,
+          phone: data.phone,
+          remarks: data.remarks,
           createdAt: data.createdAt,
           updatedAt: data.updatedAt,
           id: data._id.toString(),

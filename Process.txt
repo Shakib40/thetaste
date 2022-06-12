@@ -13,3 +13,7 @@ rgb(239, 68, 68)
 
 blue
 rgb(99, 102, 241)
+
+
+
+order : Name , phone , id , OrderMode , Remarks ,

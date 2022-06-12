@@ -1,15 +1,25 @@
 import './Order.module.css'
-
+import {React , useState , useEffect } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Basket = (props) => {
     
     const {cartItems , onAdd , onRemove , OrderNow}  = props;
+    const [Name, setName] = useState('');
+    const [ Phone , setPhone ] = useState('')
+    const [ Remarks , setRemarks ] = useState('')
 
     const itemsPrice = cartItems.reduce((acc, item) =>
       acc +  item.price * item.quantity , 0
     );
+
+    const payload = {
+      itemsPrice: itemsPrice,
+      name: Name,
+      phone: Phone,
+      remarks: Remarks,
+    }
     
 
     return(
@@ -55,8 +65,35 @@ const Basket = (props) => {
             )}
          </div>
           }
+          
+          <div style={OrderInfo} >
 
-         <button onClick={() => OrderNow(itemsPrice) } style ={OrderButton}> Confirm Order </button>
+            <div style ={ { marginBottom: '10px' } }>
+              <span style = {{marginRight: '10px',}}>Name:</span>
+              <input type="text" name="name" placeholder="Enter Name" 
+                value={Name}
+                onChange={(e) => setName(e.target.value)}
+               />
+            </div>
+
+            <div style = {{marginBottom: '15px',}}>
+              <span style = {{marginRight: '10px',}}>Phone:</span>
+              <input type="number" name="phone" placeholder="Enter Phone Number" 
+                value={Phone}
+                onChange={(e) => setPhone(e.target.value)}
+               />
+            </div>
+
+            <div style = {{marginBottom: '10px', display: 'flex',}}>
+            <span style = {{marginRight: '10px',}}> Remarks: </span>
+              <textarea type="text" name="remarks" placeholder="Remarks" 
+                value={Remarks}
+                onChange={(e) => setRemarks(e.target.value)}
+               />
+            </div>
+          </div>
+
+         <button onClick={() => OrderNow(payload) } style ={OrderButton}> Confirm Order </button>
        </aside>
     )
 }
@@ -98,6 +135,13 @@ const ChartItem = {
 }
 
 const ChartPrice = {
+  border: '1px solid black',
+  padding: '10px',
+  borderRadius: '5px',
+  marginBottom: '10px',
+}
+
+const OrderInfo = {
   border: '1px solid black',
   padding: '10px',
   borderRadius: '5px',

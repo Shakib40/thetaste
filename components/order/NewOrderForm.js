@@ -12,6 +12,10 @@ const  NewOrderForm = (props) => {
 
     const {products}  = data;
     const [cartItems , setCartItems] = useState([]);
+    
+    const [OptionMode, setOptionMode] = useState('');
+    const [ Remarks , setRemarks ] = useState('')
+
 
     const notifyAdded = (msg) => {
         toast.success(`Added : ${msg} `, {
@@ -121,10 +125,14 @@ const  NewOrderForm = (props) => {
        }
     }
 
-    function OrderNow( totalPrice) {
+    function OrderNow( data ) {
+        const { itemsPrice , name , phone , remarks } = data;
         const payload = {
             cartItems: cartItems,
-            totalPrice: totalPrice,
+            totalPrice: itemsPrice,
+            name: name,
+            phone: phone,
+            remarks: remarks,
             createdAt: new Date(),
             updatedAt: new Date(),
         }

@@ -1,9 +1,7 @@
 import OrderItem from './OrderItem'
 
 import React, { useMemo, useState, useEffect } from "react";
-
 const  OrderList = (props) => {
-  //  console.log( "OrderList" , props );
     return (
     <section style = {OrderListStyle}> 
       {props.orders.length > 0 &&
@@ -14,6 +12,9 @@ const  OrderList = (props) => {
               id={order.id}
               cartItems={order.cartItems}
               totalPrice= {order.totalPrice}
+              name = {order.name}
+              phone = {order.phone}
+              remarks = {order.remarks}
               updatedAt= {order.updatedAt}
             />
           ))}  

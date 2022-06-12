@@ -50,7 +50,8 @@ const Main = (props) => {
     ]
 
     return(
-        <section className = 'container col-2 ' style = {MainStyle}>         
+        <section className = 'container col-2 ' style = {MainStyle}>  
+                     
          
                {data.map( (item, i) => (
                   
