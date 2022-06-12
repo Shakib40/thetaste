@@ -70,31 +70,11 @@ function OrderItem(props) {
   }
   
   // Done
-  const completeOrderHandler = async (ids) => {
-      const response = await fetch(`/api/orders/id`, {
-        method: 'DELETE',
-        body: ids
-      })
-
-      const datas = await response.json();
-      const {data , id , message} = datas
-      SuccessfullyDelivery( data )
+  const processOrderHandler = async (ids) => {
+      notify('success')
+      router.push('/processing/' + ids )
   }
-  
-  // Done
-  const SuccessfullyDelivery = async (payload) => {
-    const response = await fetch('/api/delivered', {
-      method: 'POST',
-      body: JSON.stringify(payload),
-      headers: {
-        "Content-Type": "application/json"
-      }
-    })  
-    const data = await response.json();
-    notify('success')
-    router.push('/delivered')
-  }
-  
+   
   const updateOrderHandler = (link) =>{
     
     let text = "Press a button!\nEither OK or Cancel.";
@@ -151,7 +131,7 @@ function OrderItem(props) {
         </div>
 
         <div style = {{ margin: '5px 0px', }}>
-          <button className="succes" onClick={ () => completeOrderHandler(props.id)} style ={ButtonStyled}>Complete Order</button>
+          <button className="succes" onClick={ () => processOrderHandler(props.id)} style ={ButtonStyled}>Process Order</button>
           <button onClick={() => updateOrderHandler(props.id)} style ={ButtonStyled} >Update Order</button>
           <button className="alert" onClick={ () => canelOrderHandler(props.id)} style ={ButtonStyled} >Cancel Order</button>
         </div>
