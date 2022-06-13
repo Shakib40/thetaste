@@ -1,3 +1,4 @@
+// Delivered Components which are in Navigation
 import React from 'react'
 import {MongoClient} from 'mongodb'
 import DeliveredList from '../../components/delivered/deliveredList'
@@ -5,7 +6,6 @@ import DeliveredList from '../../components/delivered/deliveredList'
 const DeliveredPage = (props) => {
   return (
     <>
-    {/* <h1>Delivered</h1> */}
     <DeliveredList delivered={props.delivered} />
     </>
   )

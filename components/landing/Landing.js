@@ -1,3 +1,5 @@
+// Data are Coming From Index.js
+
 import React from 'react'
 import  Head from 'next/head'
 import {Fragment} from 'react'

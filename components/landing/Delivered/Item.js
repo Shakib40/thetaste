@@ -1,7 +1,15 @@
-import React from 'react'
+import {React , useState , useEffect }from 'react'
 
-export const Item = ({updatedAt}) => {
+export const Item = ({updatedAt , totalPrice}) => {
+
+  const [ timestamp, setTimeStamp ] = useState(null)
+
+    useEffect( () => { 
+      const time = new Date(updatedAt).toLocaleDateString() 
+      setTimeStamp(time)
+    } , [updatedAt])
+
   return (
-    <div>{ updatedAt }</div>
+    <div> {timestamp} ==  {totalPrice} </div>
   )
 }

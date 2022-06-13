@@ -1,21 +1,8 @@
+//Page / Delivered / index
 import React from 'react'
 import {DeliveredItem} from './DeliveredItem'
 export const Home = (props) => {
   
-  // const [ mapped , setmapped] = React.useState({});
-
-  // React.useEffect( () => {
-  //   const dataMap = props.delivered.reduce((acc, curr) => {
-  //     const prodArr = acc[curr.cartItems.name];
-  //     return { ...acc, [curr.cartItems.name]: prodArr ? [...prodArr, curr] : [curr] };
-  //   }, {});
-  //   setmapped(dataMap)
-  // } , [props])
- 
-  // console.log("mapped" , mapped);
-  
-  
-
   return (
     <>
     { props.delivered.map( ( delivered , index ) =>(
