@@ -2,9 +2,8 @@ import React from 'react'
 import  Head from 'next/head'
 import {Fragment} from 'react'
 import {Home} from './Home/DeliveredList'
-
+import {Delivered} from './Delivered/Delivered'
 export const Landing = (props) => {
-  // console.log("Landing" , props);
 
   const  [selected , setSelected] = React.useState(null)
 
@@ -23,6 +22,12 @@ export const Landing = (props) => {
       id: '1',
       name: 'Search',
       description: 'Search',
+    },
+
+    { 
+      id: '12',
+      name: 'Delivered',
+      description: <Delivered delivered = {props.delivered}/>
     },
 
     {
