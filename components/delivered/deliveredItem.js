@@ -10,8 +10,7 @@ export const DeliveredItem = (props) => {
           <span>Name : {item.name} </span>
           <span>Price : {item.price} </span>
           <span>Quantity : {item.quantity} </span>
-        </h1>
-         
+        </h1> 
       </div>
     ))}
     <div> Total Price : {props.totalPrice} </div>

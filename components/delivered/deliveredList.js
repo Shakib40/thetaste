@@ -1,8 +1,10 @@
 import {DeliveredItem} from './deliveredItem'
 
 const DeliveredList = (props) => {
+   
     return (
         <div style = {DeliveredStyle}>
+
         {props.delivered.map((order) => (
           <DeliveredItem
             key={order.id}

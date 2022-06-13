@@ -4,12 +4,18 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export const Processing = (props) => {
-const { id , cartItems , totalPrice , createdAt , updatedAt } = props.data;
+    const { id , cartItems , totalPrice , createdAt , updatedAt , name , phone , remarks } = props.data;
+    // console.log("Processing" , props);
+    const router = useRouter();
 
-const router = useRouter();
+    const [OptionMode, setOptionMode] = useState('');
+    const [ Remarks , setRemarks ] = useState('')
 
-const [OptionMode, setOptionMode] = useState('');
-const [ Remarks , setRemarks ] = useState('')
+    const [ timestamp, setTimeStamp ] = useState(null)
+    useEffect( () => { 
+      const time = new Date(updatedAt).toLocaleTimeString() 
+      setTimeStamp(time)
+    } , [props])
 
     const notify = (success) => {
     switch(success) {
@@ -122,10 +128,24 @@ const [ Remarks , setRemarks ] = useState('')
 
         <div style={TodayOrderInfo}>
             <div style = {{display: 'flex',}} >
-               <div style = {{ marginRight: '20px' }} >Shakib Jilani</div>
-               <div>9504361535</div>
-            </div>
-            <div>19:30</div>
+
+              <div style = {{ marginRight: '20px' }} >
+                  { name ? (
+                  <strong> { name } </strong>
+                  ) : ( <strong> Name Not Provided </strong> ) }
+              </div>
+
+              <div>
+              {phone ? (
+                    <strong> {phone } </strong>
+                  ) : ( <strong> +91XXXXXXXXXX </strong> ) }
+              </div>
+              </div>
+
+              <div> 
+              <strong> { timestamp } </strong>
+              </div>
+
         </div>
         
         <div> 
@@ -142,6 +162,12 @@ const [ Remarks , setRemarks ] = useState('')
             </tbody>
         </table>
         </div>
+        
+        { remarks && (
+        <div style = {YourMsg}>
+           <strong>Your Remarked:</strong>
+           <strong> {remarks} </strong>
+        </div> )}
 
         <div style = {OrderMode} > 
 
@@ -213,6 +239,16 @@ const ProcessingStyle = {
   const Table = {
     width: '100%',
     border: '1px solid black',
+    padding: '10px 10px',
+    marginBottom: '10px',
+    borderRadius: '5px',
+  }
+
+  const YourMsg = {
+    display: 'flex',
+    width: '100%',
+    fontSize: '18px',
+    border: ' 1px solid black',
     padding: '10px 10px',
     marginBottom: '10px',
     borderRadius: '5px',

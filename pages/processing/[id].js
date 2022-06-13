@@ -67,6 +67,9 @@ export async function getStaticProps(context) {
            totalPrice: selectID.totalPrice,
            createdAt: selectID.createdAt,
            updatedAt: selectID.updatedAt,
+           name: selectID.name,
+           phone: selectID.phone,
+           remarks: selectID.remarks,
         }
      }
   }

@@ -126,7 +126,6 @@ function OrderItem(props) {
             </div>
 
             <div> 
-                {/* <strong> { new Date(props.updatedAt).toLocaleDateString()} </strong>  */}
                 <strong> { timestamp } </strong>
             </div>
         </div>
