@@ -13,7 +13,7 @@ const  UpdateOrder = (props) => {
    
     const {products}  = data;
     const [cartItems , setCartItems] = useState([]);
-    useEffect( () => { setCartItems(cartItem) } ,[id]) 
+    useEffect( () => { setCartItems(cartItem) } ,[cartItems]) 
      
     const notifyAdded = (msg) => {
         toast.success(`Added : ${msg} `, {
