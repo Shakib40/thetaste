@@ -25,11 +25,16 @@ export async function getStaticProps() {
   return {
      props: {
       delivered: Data.map( data =>({
+          id: data._id.toString(),
           cartItems: data.cartItems,
           totalPrice: data.totalPrice,
+          name: data.name,
+          phone: data.phone,
+          remarks: data.remarks,
+          comments: data.comments,
+          paymentMode: data.paymentMode,
           createdAt: data.createdAt,
           updatedAt: data.updatedAt,
-          id: data._id.toString(),
        }))
      },
      revalidate: 1

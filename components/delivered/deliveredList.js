@@ -1,5 +1,5 @@
 import React from 'react'
-import { Home } from './Home/Home'
+import { Home } from './TodayDelivered/Home'
 
 const DeliveredList = (props) => {
     
@@ -13,9 +13,16 @@ const DeliveredList = (props) => {
     let Data = [
       { 
         id: '11',
-        name: 'Home',
+        name: 'Today Delivered',
         description: <Home delivered = {props.delivered} />
       },
+
+      { 
+        id: '12',
+        name: 'Today Payment',
+        description: 'Payment',
+      },
+
       { 
         id: '1',
         name: 'Search',
@@ -24,20 +31,8 @@ const DeliveredList = (props) => {
 
       {
         id: '2',
-        name: 'Filter',
-        description: 'Filter',
-      },
-
-      {
-        id: '3',
-        name: 'Bar Chart',
-        description: 'Bar Chart',
-      },
-
-      {
-        id: '4',
-        name: 'Line Chart',
-        description: 'Line Chart',
+        name: 'Statics',
+        description: 'Statics',
       },
     ]
     
@@ -57,17 +52,12 @@ const DeliveredList = (props) => {
     
    
     return (
-        <div style={{
-          display: 'flex',justifyContent: 'space-between',
-          width: '99%',
-          margin: '0 auto',
-          padding: '10px',
-          }}>
+        <div style={{display: 'flex',justifyContent: 'space-between',width: '99%', margin: '0 auto', padding: '10px',}}>
 
           <div style={{
             flex: 0.24,
-            boxShadow: 'rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px', // 32
-            padding: '10px',
+            // boxShadow: 'rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px', // 32
+            // padding: '10px',
             }}>
               { Data.map( (item , i) => (
               <div key={i} style = { LeftList } onClick={ () => ListSelector(item) }>
@@ -79,8 +69,8 @@ const DeliveredList = (props) => {
 
           <div style = {{
             flex: 0.75,
-            boxShadow: 'rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px', // 32
-            padding: '10px',
+            // boxShadow: 'rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px', // 32
+            // padding: '10px',
           }}>
             <Existed/>
           </div>
@@ -106,11 +96,12 @@ const LeftStyle = {
 }
 
 const LeftList = {
-  border: '1px solid black',
+  // border: '1px solid black',
   padding: '10px',
   margin: '0px 0px 10px 0px',
   letterSpacing: '1px',
   fontSize: '18px',
   cursor: 'pointer',
-  borderRadius: '5px',
+  backgroundColor: 'rgb(16, 185, 129)',
+  boxShadow: 'rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px', // 32
 }

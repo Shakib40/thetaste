@@ -140,18 +140,20 @@ const LandingStyle = {
 
 const LeftStyle = {
   flex: 0.25,
-  boxShadow: 'rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px', // 32
-  padding: '10px',
+  // boxShadow: 'rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px', // 32
+  // padding: '10px',
 }
 
 const LeftList = {
-  border: '1px solid black',
+  // border: '1px solid black',
   padding: '10px',
   margin: '0px 0px 10px 0px',
   letterSpacing: '1px',
   fontSize: '18px',
   cursor: 'pointer',
-  borderRadius: '5px',
+  // borderRadius: '5px',
+  backgroundColor: 'rgb(16, 185, 129)',
+  boxShadow: 'rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px', // 32
 }
 
 const ListAccordion = {
@@ -165,5 +167,5 @@ const ListAccordion = {
 
 const RightStyle = {
   flex: 0.74,
-  boxShadow: 'rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px', // 32
+  // boxShadow: 'rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px', // 32
 }

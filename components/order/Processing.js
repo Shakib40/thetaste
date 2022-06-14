@@ -102,14 +102,17 @@ export const Processing = (props) => {
     }
 
     const SuccessfullyDelivery = async (payload) => {
-        const { cartItems , totalPrice , createdAt , updatedAt } = payload
+        const { cartItems , totalPrice , createdAt , updatedAt , name , phone , remarks} = payload
         const payloads = {
             cartItems : cartItems,
             totalPrice : totalPrice,
+            name : name,
+            phone : phone,
+            remarks : remarks,
+            comments : Remarks,
+            paymentMode : OptionMode,
             createdAt : createdAt,
             updatedAt : new Date(),
-            paymentMode : OptionMode,
-            remarks : Remarks
         }
         const response = await fetch('/api/delivered', {
         method: 'POST',

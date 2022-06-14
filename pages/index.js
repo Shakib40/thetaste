@@ -23,18 +23,24 @@ export async function getStaticProps() {
     
   const db = client.db()
   const orderCollection =  db.collection('delivered')
-  const  Data = await orderCollection.find().toArray()
+  // const  Data = await orderCollection.find().toArray()
+  const  Data = await orderCollection.find().sort({updatedAt:-1}).toArray()
 
   client.close()
   
   return {
      props: {
        delivered: Data.map( data =>({
+          id: data._id.toString(),
           cartItems: data.cartItems,
           totalPrice: data.totalPrice,
+          name: data.name,
+          phone: data.phone,
+          remarks: data.remarks,
+          comments: data.comments,
+          paymentMode: data.paymentMode,
           createdAt: data.createdAt,
           updatedAt: data.updatedAt,
-          id: data._id.toString(),
        }))
      },
      revalidate: 1

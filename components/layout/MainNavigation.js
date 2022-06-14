@@ -9,15 +9,17 @@ function MainNavigation() {
       <nav>
         <ul>
           <li>
-            <NextLink href='/today-order'>Today Order</NextLink> {" "}
+            <NextLink href='/today-order'>Today Ordered</NextLink> {" "}
           </li>
+          <li>
+            <NextLink href='/delivered'>Today Delivered</NextLink> {" "}
+          </li>
+          
           <li>
             <NextLink href='/new-order'>New Order</NextLink> {" "}
           </li>
 
-          <li>
-            <NextLink href='/delivered'>Delivered</NextLink> {" "}
-          </li>
+          
 
         </ul>
          {/* <ul>

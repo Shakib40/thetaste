@@ -1,3 +1,38 @@
+// import React from 'react'
+
+// export const DeliveredItem = (props) => {
+//   // console.log("Props" , props);
+
+//   return (
+//     <div style = {DeliveredItemStyle}>
+//     {props.cartItems.map( (item, i) =>(
+//       <div key ={i} style = {DeliveredItemStyle1}>
+//       <h1>
+//           <span>Name : {item.name} </span>
+//           <span>Price : {item.price} </span>
+//           <span>Quantity : {item.quantity} </span>
+//         </h1> 
+//       </div>
+//     ))}
+//     <div> Total Price : {props.totalPrice} </div>
+//   </div>
+//   )
+// }
+
+// const DeliveredItemStyle = {
+//   padding: '10px 10px 10px 10px',
+//   borderRadius: '5px',
+//   border: '1px solid black',
+//   margin : '10px 10px 10px 10px',
+// }
+
+// const DeliveredItemStyle1 = {
+//   margin: '10px 0px',
+//  padding : '0px 10px',
+//  borderRadius: '5px',
+// }
+
+
 import React from 'react'
 
 export const DeliveredItem = (props) => {
@@ -10,6 +45,7 @@ export const DeliveredItem = (props) => {
 
   return (
     <div style={TodayOrder}>
+
       <div style={TodayOrderInfo}>
             <div style = {{display: 'flex',}} >
 
@@ -29,7 +65,7 @@ export const DeliveredItem = (props) => {
             <div> 
                 <strong> { timestamp } </strong>
             </div>
-        </div>
+      </div>
         
         <div> 
         <table style={Table}>
@@ -45,7 +81,7 @@ export const DeliveredItem = (props) => {
             </tbody>
         </table>
         </div>
-
+     
         { props.remarks && <div style={OrderRemark} > <strong style = {{ marginRight: '10px'}}>Remarks:</strong>{props.remarks}</div>}
 
         { props.comments && <div style={OrderRemark} > <strong style = {{ marginRight: '10px'}}>Comments:</strong>{props.comments}</div>}
@@ -54,6 +90,7 @@ export const DeliveredItem = (props) => {
         <div style = {OrderPrice}>
             <div> <strong style = {{ marginRight: '10px'}} >Total Price:-</strong> </div>
             <div> <strong>Rs.{props.totalPrice} </strong> </div>
+            <div> <strong style = {{ marginLeft: '10px'}}>{ props.paymentMode.toUpperCase()} </strong> </div>
         </div>
     </div>
   )
@@ -75,9 +112,9 @@ const TodayOrder = {
 const TodayOrderInfo = {
   display: 'flex',
   justifyContent : 'space-between',
-  marginBottom: '15px',
+  marginBottom : '10px',
   border: '1px solid black',
-  borderRadius: '5px',
+  // borderRadius: '5px',
   padding: '10px 10px',
 }
 
@@ -86,7 +123,7 @@ const Table = {
   border: '1px solid black',
   padding: '10px 10px',
   marginBottom: '10px',
-  borderRadius: '5px',
+  // borderRadius: '5px',
 }
 
 const OrderRemark =  {
@@ -94,8 +131,8 @@ const OrderRemark =  {
   fontSize: '20px',
   border: ' 1px solid black',
   padding: '10px 10px',
-  marginBottom: '5px',
-  borderRadius: '5px',
+  marginBottom : '10px',
+  // borderRadius: '5px',
 }
 
 const OrderPrice = {
@@ -103,8 +140,8 @@ const OrderPrice = {
   fontSize: '20px',
   border: ' 1px solid black',
   padding: '10px 10px',
-  marginBottom: '5px',
-  borderRadius: '5px',
+  marginBottom : '10px',
+  // borderRadius: '5px',
   justifyContent: 'flex-end',
 }
 
