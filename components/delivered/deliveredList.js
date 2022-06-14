@@ -4,16 +4,13 @@ import { Home } from './TodayDelivered/Home'
 const DeliveredList = (props) => {
 
   const date = new Date().getDate()
-  
-  const fromTime = new Date(2022, 5, date, 9, 5, 5, 5)
-  const toTime = new Date(2022, 5, date, 23, 58, 58, 5)
-
-   const item =  props.delivered.filter( (data) => {
+  const fromTime = new Date(2022, 5, date, 0, 0, 0, 5)
+  const toTime = new Date(2022, 5, date, 23, 59, 59, 5)
+   const items =  props.delivered.filter( (data) => {
       return new Date(data.createdAt).getTime() >= new Date(fromTime).getTime() &&  
             new Date(data.createdAt).getTime() <= new Date(toTime).getTime();
   })
-
-  console.log("Filter", item);
+  console.log("Filter", items);
 
     
   const  [selected , setSelected] = React.useState(null)
@@ -27,7 +24,7 @@ const DeliveredList = (props) => {
       { 
         id: '11',
         name: 'Today Delivered',
-        description: <Home delivered = {props.delivered} />
+        description: <Home delivered = {items} />
       },
 
       { 
