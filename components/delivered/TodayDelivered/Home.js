@@ -3,7 +3,6 @@ import { DeliveredItem } from './deliveredItem';
 
 export const Home = (props) => {
 
-console.log("TodayDeliveredPrice" ,props.TodayDeliveredPrice);
  return (
     <div> 
        <div style = {TodayOrder}>
