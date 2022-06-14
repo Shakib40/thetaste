@@ -13,7 +13,8 @@ const  UpdateOrder = (props) => {
    
     const {products}  = data;
     const [cartItems , setCartItems] = useState([]);
-    useEffect( () => { setCartItems(cartItem) } ,[cartItems]) 
+
+    React.useEffect( () => { setCartItems(cartItem) } ,[cartItem]) 
      
     const notifyAdded = (msg) => {
         toast.success(`Added : ${msg} `, {
@@ -183,12 +184,6 @@ const  UpdateOrder = (props) => {
 
         
     }
-
-
-    
-//     if( cartItems.length === 0 ){
-//         DeleteOrder()
-//    }
 
     return (
         <section>
