@@ -12,7 +12,7 @@ function MainNavigation() {
             <NextLink href='/today-order'>Today Ordered</NextLink> {" "}
           </li>
           <li>
-            <NextLink href='/delivered'>Today Delivered</NextLink> {" "}
+            <NextLink href='/today-delivered'>Today Delivered</NextLink> {" "}
           </li>
           
           <li>

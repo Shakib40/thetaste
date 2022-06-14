@@ -122,7 +122,7 @@ export const Processing = (props) => {
         }
         })  
         const data = await response.json();
-        router.push('/delivered')
+        router.push('/today-delivered')
     }
 
 
