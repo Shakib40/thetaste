@@ -1,18 +1,38 @@
 import React from 'react'
 import { Home } from './TodayDelivered/Home'
+import {Due} from './TodayDue/Due'
 
 const DeliveredList = (props) => {
 
   const date = new Date().getDate()
   const fromTime = new Date(2022, 5, date, 0, 0, 0, 5)
   const toTime = new Date(2022, 5, date, 23, 59, 59, 5)
-   const items =  props.delivered.filter( (data) => {
+  
+  //TodayDelivered
+  const TodayDelivered =  props.delivered.filter( (data) => {
       return new Date(data.createdAt).getTime() >= new Date(fromTime).getTime() &&  
             new Date(data.createdAt).getTime() <= new Date(toTime).getTime();
   })
-  console.log("Filter", items);
+  const TodayDeliveredPrice = TodayDelivered.reduce((acc, item) =>acc +  item.totalPrice, 0);
 
-    
+  const TodayDeliveredCash =  TodayDelivered.filter( (data) => { return data.paymentMode === 'cash'})
+
+  const TodayDeliveredCashPrice = TodayDeliveredCash.reduce((acc, item) => acc +  item.totalPrice, 0);
+
+  const TodayDeliveredOnline =  TodayDelivered.filter( (data) => { return data.paymentMode === 'online'})
+  
+  const TodayDeliveredOnlinePrice = TodayDeliveredOnline.reduce((acc, item) => acc +  item.totalPrice, 0);
+
+ 
+  //TodayDelivered
+  const TodayDue =  TodayDelivered.filter( (data) => {
+    return data.paymentMode === 'due'
+  })
+
+  const TodayDuePrice = TodayDue.reduce((acc, item) =>
+      acc +  item.totalPrice, 0
+  );
+
   const  [selected , setSelected] = React.useState(null)
 
     const ListSelector = (props) => {
@@ -24,13 +44,18 @@ const DeliveredList = (props) => {
       { 
         id: '11',
         name: 'Today Delivered',
-        description: <Home delivered = {items} />
+        description: <Home 
+                    delivered = {TodayDelivered} 
+                    TodayDeliveredPrice = {TodayDeliveredPrice} 
+                    TodayDeliveredCashPrice ={TodayDeliveredCashPrice }
+                    TodayDeliveredOnlinePrice = {TodayDeliveredOnlinePrice}
+                    />
       },
 
       { 
         id: '12',
-        name: 'Today Payment',
-        description: 'Payment',
+        name: 'Today Due',
+        description: <Due delivered = {TodayDue} TodayDuePrice = {TodayDuePrice} />
       },
 
       { 

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const DeliveredItem = (props) => {
+export const DueItem = (props) => {
 
   const [ timestamp, setTimeStamp ] = React.useState(null)
   React.useEffect( () => { 
@@ -10,6 +10,7 @@ export const DeliveredItem = (props) => {
 
   return (
     <div style={TodayOrder}>
+
       <div style={TodayOrderInfo}>
             <div style = {{display: 'flex',}} >
 
