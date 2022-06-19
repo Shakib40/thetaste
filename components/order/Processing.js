@@ -15,7 +15,7 @@ export const Processing = (props) => {
     React.useEffect( () => { 
       const time = new Date(updatedAt).toLocaleTimeString() 
       setTimeStamp(time)
-    } , [OptionMode , Remarks])
+    } , [])
 
     const notify = (success) => {
     switch(success) {
