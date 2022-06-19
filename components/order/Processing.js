@@ -15,7 +15,7 @@ export const Processing = (props) => {
     useEffect( () => { 
       const time = new Date(updatedAt).toLocaleTimeString() 
       setTimeStamp(time)
-    } , [])
+    } ,)
 
     const notify = (success) => {
     switch(success) {
