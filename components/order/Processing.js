@@ -11,11 +11,12 @@ export const Processing = (props) => {
     const [OptionMode, setOptionMode] = useState('');
     const [ Remarks , setRemarks ] = useState('')
 
-    const [ timestamp, setTimeStamp ] = useState(null)
-    useEffect( () => { 
-      const time = new Date(updatedAt).toLocaleTimeString() 
-      setTimeStamp(time)
-    } ,)
+    // const [ timestamp, setTimeStamp ] = useState(null)
+    // useEffect( () => { 
+    //   const time = new Date(updatedAt).toLocaleTimeString() 
+    //   setTimeStamp(time)
+    // } ,)
+    const timestamp = new Date(updatedAt).toLocaleTimeString() 
 
     const notify = (success) => {
     switch(success) {
