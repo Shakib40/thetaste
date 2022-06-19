@@ -103,6 +103,10 @@ export const Processing = (props) => {
 
     const SuccessfullyDelivery = async (payload) => {
         const { cartItems , totalPrice , createdAt , updatedAt , name , phone , remarks} = payload
+        if(name == '') { name = 'None' }
+        if(phone == '') { phone = 'None' }
+        if(remarks == '') { remarks == 'None' }
+        
         const payloads = {
             cartItems : cartItems,
             totalPrice : totalPrice,

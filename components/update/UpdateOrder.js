@@ -1,4 +1,4 @@
-import { useEffect , useState } from 'react'
+import { React, useEffect , useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useRouter } from "next/router";
@@ -14,7 +14,7 @@ const  UpdateOrder = (props) => {
     const {products}  = data;
     const [cartItems , setCartItems] = useState([]);
 
-    React.useEffect( () => { setCartItems(cartItem) } ,[cartItem]) 
+    useEffect( () => { setCartItems(cartItem) } ,[cartItem]) 
      
     const notifyAdded = (msg) => {
         toast.success(`Added : ${msg} `, {

@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {useRouter} from 'next/router'
 export const DueItem = (props) => {
 
   const [ timestamp, setTimeStamp ] = React.useState(null)
@@ -8,8 +8,13 @@ export const DueItem = (props) => {
     setTimeStamp(time)
   } , [props])
 
+  const router = useRouter();
+  function completeDueHandler() {
+    router.push('/complete-due/'+ props.id )
+  }
+
   return (
-    <div style={TodayOrder}>
+    <div style={TodayOrder} onClick={() => completeDueHandler()}>
 
       <div style={TodayOrderInfo}>
             <div style = {{display: 'flex',}} >
@@ -72,6 +77,7 @@ const TodayOrder = {
   // borderRadius: '5px',
   backgroundColor: 'rgb(16, 185, 129)',
   boxShadow: 'rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px', // 32
+  cursor: 'pointer',
 }
 
 const TodayOrderInfo = {
