@@ -12,10 +12,10 @@ export const Processing = (props) => {
     const [ Remarks , setRemarks ] = useState('')
 
     const [ timestamp, setTimeStamp ] = useState(null)
-    useEffect( () => { 
+    React.useEffect( () => { 
       const time = new Date(updatedAt).toLocaleTimeString() 
       setTimeStamp(time)
-    } , [updatedAt])
+    } , [OptionMode , Remarks])
 
     const notify = (success) => {
     switch(success) {
