@@ -1,0 +1,23 @@
+.landingPage{
+    display: flex;
+    .landingContainer{
+        flex: 6;
+    }
+    .widgets, .charts{
+        display: flex;
+        padding: 20px;
+        gap: 20px;
+    }
+    .charts{
+        padding: 5px  20px;
+    }
+
+    .table{
+        padding: 5px  20px;
+        margin: 10px 0px;
+    }
+    .tableContainer{
+        box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+        border-radius: 5px;
+    }
+}

@@ -27,7 +27,7 @@ export async function getStaticProps() {
   const orderCollection =  db.collection('delivered')
   // const  Data = await orderCollection.find().toArray()
   const  Data = await orderCollection.find().sort({updatedAt:-1}).toArray()
-  console.log(Data);
+  // console.log(Data);
   client.close()
   
   return {

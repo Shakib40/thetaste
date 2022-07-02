@@ -1,0 +1,22 @@
+.sidebar{
+    // background-color: lightcoral;
+    flex: 1;
+    border-right: 0.5px solid rgb(230, 227, 227);
+    min-height: 100vh;
+    background-color: white;
+    .list{
+        display: flex;
+        flex-direction: column;
+        padding:5px;
+        span{
+            border: 1px solid red;
+            padding: 8px 5px;
+            margin: 2px 0px;
+            letter-spacing:2px;
+            font-size:18px;
+        }
+        span:first-child{
+            margin-top:0px;
+        }
+    }
+}

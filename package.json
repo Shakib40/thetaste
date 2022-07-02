@@ -9,11 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@material-ui/utils": "^4.11.3",
+    "@mui/icons-material": "^5.8.4",
+    "apexcharts": "^3.35.3",
+    "chart.js": "2.9.3",
     "mongodb": "^4.7.0",
     "next": "12.1.6",
     "react": "18.2.0",
+    "react-apexcharts": "^1.4.0",
     "react-dom": "18.2.0",
-    "react-toastify": "^9.0.5"
+    "react-icons": "^4.4.0",
+    "react-table": "^7.8.0",
+    "react-toastify": "^9.0.5",
+    "recharts": "^2.1.12",
+    "sass": "^1.53.0",
+    "styled-components": "^5.3.5"
   },
   "devDependencies": {
     "eslint": "8.17.0",
