@@ -12,6 +12,67 @@ export const Due = (props) => {
     setTimeStamp(time)
   } , [props])
 
+  const notify = (success) => {
+    switch(success) {
+        case 'success':
+            toast.success('🦄 Wow so easy!', {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                style:{
+                    backgroundColor:'black',
+                }
+            });
+          break;
+        case 'error':
+            toast.error('🦄Please Enter Order!', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                style:{
+                    backgroundColor:'black',
+                }
+            });
+          break;
+          case 'alert':
+            toast.warn('🦄 Updating in Progress!', {
+              position: "top-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              style:{
+                backgroundColor:'black',
+              }
+              });
+            break;
+            case "warn" :
+              toast.error('🦄 Hold a Seconds!', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                style:{
+                  backgroundColor:'black',
+                }
+                });
+              break;
+        default: 
+      }
+  }
    
   const [OptionMode, setOptionMode] = React.useState('');
 
@@ -32,11 +93,11 @@ export const Due = (props) => {
         }
       })  
       const data = await response.json();
-      // notify('success')
+      notify('success')
       router.push('/')
 
   }else{
-    alert('Please select')
+    notify('warn')
   }
 }
 
@@ -99,6 +160,17 @@ export const Due = (props) => {
         </select>
         </div>
         <button style={ButtonStyle} type="button" onClick= {() => SuccessfullyDelivery()}  >Complete Due</button>
+        <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+          />
   </div>
   )
 }
@@ -107,6 +179,10 @@ const ButtonStyle = {
   letterSpacing : '1px',
   border: 'none',
   cursor: 'pointer',
+  letterSpacing: '2px',
+  fontSize: '22px',
+  backgroundColor: '#27cda5',
+  color: '#FFFFFF',
 }
 
 const InputSelect = {
@@ -122,13 +198,12 @@ const InputSelect = {
 
 const TodayOrder = {
   marginBottom : '10px',
-  boxShadow: 'rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset', // 85
   display : 'flex',
   flexDirection : 'column',
   padding : '15px 20px',
   letterSpacing : '2px',
-  backgroundColor: 'rgb(16, 185, 129)',
-  boxShadow: 'rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px', // 32
+  borderRadius: '5px',
+  boxShadow: '2px 4px 10px 1px rgba(201, 201, 201, 0.47)',
   width: '50%',
   margin: '0 auto',
   marginTop: '20px',

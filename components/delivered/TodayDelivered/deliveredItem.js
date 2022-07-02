@@ -63,28 +63,29 @@ export const DeliveredItem = (props) => {
 
 const TodayOrder = {
   marginBottom : '10px',
-  boxShadow: 'rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset', // 85
+  // boxShadow: 'rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset', // 85
   display : 'flex',
   flexDirection : 'column',
   padding : '15px 20px',
   letterSpacing : '2px',
-  // borderRadius: '5px',
-  backgroundColor: 'rgb(16, 185, 129)',
-  boxShadow: 'rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px', // 32
+  borderRadius: '5px',
+  // backgroundColor: 'rgb(16, 185, 129)',
+  // boxShadow: 'rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px', // 32
+  boxShadow: '2px 4px 10px 1px rgba(201, 201, 201, 0.47)',
 }
 
 const TodayOrderInfo = {
   display: 'flex',
   justifyContent : 'space-between',
   marginBottom : '10px',
-  border: '1px solid black',
+  border: '1px solid gray',
   // borderRadius: '5px',
   padding: '10px 10px',
 }
 
 const Table = {
   width: '100%',
-  border: '1px solid black',
+  border: '1px solid gray',
   padding: '10px 10px',
   marginBottom: '10px',
   // borderRadius: '5px',
@@ -93,7 +94,7 @@ const Table = {
 const OrderRemark =  {
   display: 'flex',
   fontSize: '20px',
-  border: ' 1px solid black',
+  border: ' 1px solid gray',
   padding: '10px 10px',
   marginBottom : '10px',
   // borderRadius: '5px',
@@ -102,7 +103,7 @@ const OrderRemark =  {
 const OrderPrice = {
   display: 'flex',
   fontSize: '20px',
-  border: ' 1px solid black',
+  border: ' 1px solid gray',
   padding: '10px 10px',
   marginBottom : '10px',
   // borderRadius: '5px',

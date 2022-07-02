@@ -51,6 +51,7 @@ const DeliveredList = (props) => {
                     TodayDeliveredPrice = {TodayDeliveredPrice} 
                     TodayDeliveredCashPrice ={TodayDeliveredCashPrice }
                     TodayDeliveredOnlinePrice = {TodayDeliveredOnlinePrice}
+                    TodayDuePrice = {TodayDuePrice}
                     />
       },
 
@@ -59,13 +60,6 @@ const DeliveredList = (props) => {
         name: 'Today Due',
         description: <Due delivered = {TodayDue} TodayDuePrice = {TodayDuePrice} />
       },
-
-      { 
-        id: '1',
-        name: 'Search',
-        description: 'Search',
-      },
-
       {
         id: '2',
         name: 'Statics',
@@ -124,7 +118,7 @@ const  DeliveredStyle = {
 
 const LeftStyle = {
   flex: 0.25,
-  boxShadow: 'rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px', // 32
+  boxShadow: '2px 4px 10px 1px rgba(201, 201, 201, 0.47)',
   padding: '10px',
 }
 
@@ -134,6 +128,5 @@ const LeftList = {
   letterSpacing: '1px',
   fontSize: '18px',
   cursor: 'pointer',
-  backgroundColor: 'rgb(16, 185, 129)',
-  boxShadow: 'rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px', // 32
+  boxShadow: '2px 4px 10px 1px rgba(201, 201, 201, 0.47)',
 }

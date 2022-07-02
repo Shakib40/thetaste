@@ -2,10 +2,8 @@ import React from 'react'
 import styles from'./landingPage.module.scss';
 import Sidebar from './Sidebar/Sidebar.jsx'
 import Widget from './Widget/Widget.jsx';
-// import Featured from './Featured/Featured.jsx'
 import LineChart from './linechart/LineChart.jsx';
 import BarChart from './barchart/BarChart.jsx';
-// import DeliveredLineChart from './Chart/DeliveredLineChart.js'
 import Table from '../Table/Table.js'
 
 const LandingPage = (props) => {

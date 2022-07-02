@@ -9,7 +9,7 @@ export const Processing = (props) => {
     const router = useRouter();
 
     const [OptionMode, setOptionMode] = useState('');
-    const [ Remarks , setRemarks ] = useState('')
+    const [ Comments , setRemarks ] = useState('')
 
     // const [ timestamp, setTimeStamp ] = useState(null)
     // useEffect( () => { 
@@ -114,7 +114,7 @@ export const Processing = (props) => {
             name : name,
             phone : phone,
             remarks : remarks,
-            comments : Remarks,
+            comments : Comments,
             paymentMode : OptionMode,
             createdAt : createdAt,
             updatedAt : new Date(),
@@ -190,9 +190,9 @@ export const Processing = (props) => {
             </div>
 
             <div style={{ display: 'flex', } }>
-              <span style = {{marginRight: '10px', width: '20%',} }> Remarks: </span>
-              <textarea style = {InputRemark} type="text" name="remarks" placeholder="Remarks" 
-                value={Remarks}
+              <span style = {{marginRight: '10px', width: '20%',} }> Comments: </span>
+              <textarea style = {InputRemark} type="text" name="comments" placeholder="Comments....." 
+                value={Comments}
                 onChange={(e) => setRemarks(e.target.value)}
                />
             </div>

@@ -5,9 +5,8 @@ export const Due = (props) => {
     return (
         <> 
            <div style = {TodayOrder}>
-                <div><span>Today Due Price:</span> <span>{props.TodayDuePrice}</span> </div>
+                <div><span>Today Due Price:</span> <strong>{props.TodayDuePrice}</strong> </div>
            </div>
-
             {props.delivered.map((order) => (
             <DueItem
                 key={order.id}
@@ -32,6 +31,6 @@ const TodayOrder = {
     padding : '15px 20px',
     letterSpacing : '3px',
     fontSize : '20px',
-    backgroundColor: 'rgb(16, 185, 129)',
-    boxShadow: 'rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px', // 32
+    boxShadow: '2px 4px 10px 1px rgba(201, 201, 201, 0.47)',
+    borderRadius : '5px',
 }
