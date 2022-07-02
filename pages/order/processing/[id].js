@@ -1,9 +1,8 @@
-//moved
 import React from 'react'
 import {MongoClient, ObjectId} from 'mongodb'
 import {Fragment} from 'react'
 import  Head from 'next/head'
-import { Processing } from '../../components/order/Processing'
+import { Processing } from '../../../components/order/Processing'
 
 const index = (props) => {
   return (

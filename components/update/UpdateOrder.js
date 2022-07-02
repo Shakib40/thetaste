@@ -157,7 +157,7 @@ const  UpdateOrder = (props) => {
             body: id,
         })  
         const data = await response.json();
-        router.push('/new-order')
+        router.push('/order/new')
         } 
     }
    
@@ -180,7 +180,7 @@ const  UpdateOrder = (props) => {
               })  
               const data = await response.json();
               notify('success')
-              router.push('/today-order')
+              router.push('/order')
         }
 
         

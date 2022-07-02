@@ -79,7 +79,7 @@ function OrderItem(props) {
   // Done
   const processOrderHandler = async (ids) => {
       notify('success')
-      router.push('/processing/' + ids )
+      router.push('/order/processing/' + ids )
   }
   
   const updateOrderHandler = (link) =>{
@@ -88,7 +88,7 @@ function OrderItem(props) {
     
     if (confirm(text) == true) {
       notify('alert')
-      router.push('/updateOrder/' + link )
+      router.push('/order/update/' + link )
     } 
   }
 
@@ -101,7 +101,7 @@ function OrderItem(props) {
         body: link,
       })  
       const data = await response.json();
-      router.push('/new-order')
+      router.push('/order/new')
     } 
   }
 

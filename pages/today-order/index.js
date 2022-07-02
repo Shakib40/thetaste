@@ -1,41 +1,42 @@
-import React from 'react'
-import OrderList from '../../components/order/OrderItem/orderList'
-import { MongoClient } from 'mongodb'
+// //moved
+// import React from 'react'
+// import OrderList from '../../components/order/OrderItem/orderList'
+// import { MongoClient } from 'mongodb'
 
-const index = (props) => {
-  return (
-    <>
-    <OrderList orders={props.orders} />
-    </>
-  )
-}
+// const index = (props) => {
+//   return (
+//     <>
+//     <OrderList orders={props.orders} />
+//     </>
+//   )
+// }
 
-export async function getStaticProps() {
-  const client =await MongoClient.connect(
-    'mongodb+srv://shakib40:shakib40@cluster0.6zwqr.mongodb.net/thetaste?retryWrites=true&w=majority'
-  );
+// export async function getStaticProps() {
+//   const client =await MongoClient.connect(
+//     'mongodb+srv://shakib40:shakib40@cluster0.6zwqr.mongodb.net/thetaste?retryWrites=true&w=majority'
+//   );
     
-  const db = client.db()
-  const orderCollection =  db.collection('orders')
-  const  Data = await orderCollection.find().toArray()
+//   const db = client.db()
+//   const orderCollection =  db.collection('orders')
+//   const  Data = await orderCollection.find().toArray()
 
-  client.close()
+//   client.close()
   
-  return {
-     props: {
-       orders: Data.map( data =>({
-          cartItems: data.cartItems,
-          totalPrice: data.totalPrice,
-          name: data.name,
-          phone: data.phone,
-          remarks: data.remarks,
-          createdAt: data.createdAt,
-          updatedAt: data.updatedAt,
-          id: data._id.toString(),
-       }))
-     },
-     revalidate: 1
-  };
-}
+//   return {
+//      props: {
+//        orders: Data.map( data =>({
+//           cartItems: data.cartItems,
+//           totalPrice: data.totalPrice,
+//           name: data.name,
+//           phone: data.phone,
+//           remarks: data.remarks,
+//           createdAt: data.createdAt,
+//           updatedAt: data.updatedAt,
+//           id: data._id.toString(),
+//        }))
+//      },
+//      revalidate: 1
+//   };
+// }
 
-export default index
+// export default index

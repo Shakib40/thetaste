@@ -1,7 +1,8 @@
-import {Landing} from '../components/landing/Landing'
+// import {Landing} from '../components/landing/Landing'
 import { MongoClient } from 'mongodb'
 import  Head from 'next/head'
 import {Fragment} from 'react'
+import LandingPage from '../components/LandingPage/LandingPage.js'
 
 function Home(props) {
 
@@ -11,7 +12,8 @@ function Home(props) {
         <title>Home</title>
         <meta name="description" content="Browse a huge list of higly active react learning code!"/>
       </Head>
-      <Landing delivered = {props.delivered} />
+      {/* <Landing delivered = {props.delivered} /> */}
+      <LandingPage/>
     </Fragment>
   )
 }
@@ -25,7 +27,7 @@ export async function getStaticProps() {
   const orderCollection =  db.collection('delivered')
   // const  Data = await orderCollection.find().toArray()
   const  Data = await orderCollection.find().sort({updatedAt:-1}).toArray()
-
+  console.log(Data);
   client.close()
   
   return {

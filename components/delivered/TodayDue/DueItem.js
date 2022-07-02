@@ -10,7 +10,7 @@ export const DueItem = (props) => {
 
   const router = useRouter();
   function completeDueHandler() {
-    router.push('/complete-due/'+ props.id )
+    router.push('/delivered/due/'+ props.id )
   }
 
   return (

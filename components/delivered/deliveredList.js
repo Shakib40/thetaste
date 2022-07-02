@@ -5,8 +5,10 @@ import {Due} from './TodayDue/Due'
 const DeliveredList = (props) => {
 
   const date = new Date().getDate()
-  const fromTime = new Date(2022, 5, date, 0, 0, 0, 5)
-  const toTime = new Date(2022, 5, date, 23, 59, 59, 5)
+  const month = new Date().getMonth()
+
+  const fromTime = new Date(2022, month, date, 0, 0, 0, 5)
+  const toTime = new Date(2022, month, date, 23, 59, 59, 5)
   
   //TodayDelivered
   const TodayDelivered =  props.delivered.filter( (data) => {
@@ -24,7 +26,7 @@ const DeliveredList = (props) => {
   const TodayDeliveredOnlinePrice = TodayDeliveredOnline.reduce((acc, item) => acc +  item.totalPrice, 0);
 
  
-  //TodayDelivered
+  //TodayDelivered Due
   const TodayDue =  TodayDelivered.filter( (data) => {
     return data.paymentMode === 'due'
   })
@@ -91,8 +93,6 @@ const DeliveredList = (props) => {
 
           <div style={{
             flex: 0.24,
-            // boxShadow: 'rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px', // 32
-            // padding: '10px',
             }}>
               { Data.map( (item , i) => (
               <div key={i} style = { LeftList } onClick={ () => ListSelector(item) }>
@@ -104,8 +104,6 @@ const DeliveredList = (props) => {
 
           <div style = {{
             flex: 0.75,
-            // boxShadow: 'rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px', // 32
-            // padding: '10px',
           }}>
             <Existed/>
           </div>
@@ -131,7 +129,6 @@ const LeftStyle = {
 }
 
 const LeftList = {
-  // border: '1px solid black',
   padding: '10px',
   margin: '0px 0px 10px 0px',
   letterSpacing: '1px',
