@@ -16,13 +16,8 @@
     "react-toastify": "^9.0.5"
   },
   "devDependencies": {
-<<<<<<< HEAD
     "eslint": "8.17.0",
     "eslint-config-next": "12.1.6",
     "eslint-plugin-react": "^7.30.0"
-=======
-    "eslint": "8.18.0",
-    "eslint-config-next": "12.1.6"
->>>>>>> 7ed8ee6c598a5ccdc47e27afa1fe1d18072e6613
   }
 }
